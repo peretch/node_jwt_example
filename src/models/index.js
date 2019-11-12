@@ -1,1 +1,1 @@
-exports.Team = require('./user.model');
+exports.User = require('./user.model');
