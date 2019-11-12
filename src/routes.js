@@ -30,6 +30,14 @@ module.exports = (app) => {
                 });
             })
             .catch((error) => {
+                if(error.code === 11000){
+                    res
+                    .status(401)
+                    .json({
+                        message: ('El usuario on el mail "' + error.keyValue.email + '" ya existe en el sistema')
+                    })
+                }
+                
                 res.json({
                     error
                 })
